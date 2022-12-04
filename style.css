@@ -1,0 +1,49 @@
+*{
+    margin : 0px;
+
+}
+
+header{
+    background-color: crimson;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+header h1{
+    font-size: 4vw;
+    font-family:'Times New Roman', Times, serif;
+}
+
+ul li{
+    border : thin solid black;
+    width : 20%;
+    padding: 10px;
+    color: blue;
+    text-decoration: underline;
+}
+
+ul li:hover{
+    cursor: pointer;
+}
+
+#inputer{
+    float : right;
+    display: block;
+    border: thin solid black;
+    margin-right: 20px;
+    padding: 10px;
+    width : 50%;
+    margin-top: 20px;
+    height: 400px;
+}
+
+#animalImage {
+    width : 300px;
+    height : 300px;
+    object-fit: contain;
+    margin-top: 10px;
+}
+
+#displayed{
+    text-align: center;
+}
