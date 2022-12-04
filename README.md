@@ -2,7 +2,7 @@
 # Phase-1-week-2-code-challenge-Flataculties
 
 ## Description
-Moringa School software development Flatiron phase-1-week-1-code-challenges involves building Flataculties, an app where you can vote for the cutest animal!. It covers three basic challenges solved using:
+Moringa School software development Flatiron phase-1-week-2-code-challenges involves building Flataculties, an app where you can vote for the cutest animal!. It covers three basic challenges solved using:
 HTML, a json server, JavaScript and css.
 
 1)  The first challenge involves seeing a list of all animal names by making a GET request.
@@ -15,8 +15,6 @@ HTML, a json server, JavaScript and css.
 ## Installation
 
 To use this repo on your machine requires some simple steps
-
-### Alternative One
 
 - Open a terminal / command line interface on your computer
 - Clone the repo by using the following:
@@ -40,7 +38,7 @@ Test your server by visiting this route in the browser:
 
 # Running the application
 
-To open site in browser while inside the cloned directory:
+To open site in browser run while inside the cloned repo:
 
 
         explorer.exe index.html
