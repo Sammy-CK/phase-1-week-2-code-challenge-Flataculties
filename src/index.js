@@ -7,10 +7,10 @@ const animalVotes = document.getElementById('animalVotes')
 const animalImage = document.getElementById('animalImg')
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://sammy-ck.github.io/cutiesdb.json')
+    fetch('http://localhost:3000/characters')
         .then(resp => resp.json())
         .then(data => {
-            (data.characters).forEach(animal => {
+            data.forEach(animal => {
                 showAnimalData(animal)
             })
         })
