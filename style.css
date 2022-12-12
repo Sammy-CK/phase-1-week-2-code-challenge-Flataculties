@@ -1,49 +1,35 @@
-*{
-    margin : 0px;
-
+* {
+    margin: 0px
 }
 
-header{
-    background-color: crimson;
+header {
+    background-color: red;
     text-align: center;
-    margin-bottom: 10px;
+    font-size: 3vw;
+    font-family: fantasy;
+    height: 50px;
 }
 
-header h1{
-    font-size: 4vw;
-    font-family:'Times New Roman', Times, serif;
+#menu {
+    float: left;
+    width: 30%;
+    background-color: lightgrey;
+    border: thick solid black;
+    height: 700px;
 }
 
-ul li{
-    border : thin solid black;
-    width : 20%;
-    padding: 10px;
+li {
+    padding: 20px;
     color: blue;
-    text-decoration: underline;
-}
-
-ul li:hover{
-    cursor: pointer;
-}
-
-#inputer{
-    float : right;
-    display: block;
     border: thin solid black;
-    margin-right: 20px;
-    padding: 10px;
-    width : 50%;
-    margin-top: 20px;
-    height: 400px;
 }
 
-#animalImage {
-    width : 300px;
-    height : 300px;
-    object-fit: contain;
-    margin-top: 10px;
+img {
+    width: 500px;
+    height: 500px;
 }
 
-#displayed{
-    text-align: center;
+#animalDetails {
+    margin: 10px;
+    border: thin solid black;
 }

@@ -14,6 +14,11 @@ HTML, a json server, JavaScript and css.
 
 ## Installation
 
+## Alternative One
+ Use Github pages to access the website. 
+
+
+## Alternative Two
 To use this repo on your machine requires some simple steps
 
 - Open a terminal / command line interface on your computer
@@ -26,14 +31,7 @@ To use this repo on your machine requires some simple steps
 
         cd phase-1-week-2-code-challenge-Flataculties
 
-Run this command to get the backend started:
-
-         json-server --watch db.json
-
-Test your server by visiting this route in the browser: 
-
-
-        http://localhost:3000/characters
+- json server is hosted on github pages so no need to run server locally
 
 
 # Running the application

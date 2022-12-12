@@ -1,81 +1,68 @@
-/**
- * fetchAnimals: Gets the animals from server
- * Output: Displays the animalName, animalImage, animalDetails and sum of votes
- */
-   function fetchAnimals(){
+const animalNamesMenu = document.getElementById('animalNamesMenu')
+const animalDetails = document.getElementById('animalDetails')
+const newVotes = document.getElementById('newVotes');
+const newVotesDiv = document.getElementById('newVotesDiv')
+const deleteBtn = document.getElementById('reset')
+const animalVotes = document.getElementById('animalVotes')
+const animalImage = document.getElementById('animalImg')
 
-    //assign ul where list will be appended
-    const ul = document.getElementById('cuties');
-
-//assign div container for animal details
-    const imageAndVotes = document.getElementById('displayed');
-
-//
-    let voteTotal = document.getElementById('animalVotes');
-
-
-    //fetch request to db.json server
-    fetch('http://localhost:3000/characters')
-    .then((response) => response.json())
-    .then((data) => {
-        data.forEach(animalData => {
-
-
-//create and assign new list for animal names
-        let animal = document.createElement('li');
-
-
-
-// Appends animal name to the list of animals
-    function addName() {
-        animal.innerText =  animalData.name;
-        ul.append(animal);
-}
-
-addName();
-
-showAnimals();
-//Adds Eventlistener on an animal’s name to see its details i.e image and number of votes
-function showAnimals(){
-    animal.addEventListener('click', () => {
-
-
-       let animalImage = document.getElementById('animalImage');
-       animalImage.src = animalData.image
-   voteTotal.innerHTML = `<b>TOTAL VOTES FOR ${animalData.name}:</b> ${animalData.votes}`;
-
-
-//sums new votes added
-   addNewVotes();
-
-    })
-    
-
-//sums the new votes added
-function addNewVotes(){
-
-    let addSubmit = document.getElementById('submitVotes');
-    
-    let sumVotes = +animalData.votes
-
-    addSubmit.addEventListener('click', () => {
-        let voteAdd = document.getElementById('addedVotes');
-        sumVotes = sumVotes + +voteAdd.value
-        voteTotal.innerHTML = `<b>TOTAL VOTES FOR ${animalData.name}:</b> ${sumVotes}`;
-    })
-}
-            
-        }
-
-       
-        });
-
-    })
-
-    }
-
-
-//Ensure page is loaded and call main function: fetchAnimals
-document.addEventListener('DOMContentLoaded',() => {
-        fetchAnimals();
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('https://sammy-ck.github.io/cutiesdb.json')
+        .then(resp => resp.json())
+        .then(data => {
+            (data.characters).forEach(animal => {
+                showAnimalData(animal)
+            })
+        })
 })
+
+//shows animal names in a list and animal details on clicking name
+function showAnimalData(animal) {
+    const li = document.createElement('li')
+    animalToMenu(li, animal, animalNamesMenu)
+    let voteTotal = animal.votes
+
+    //shows animal details on clicking name
+    li.addEventListener('click', () => {
+
+        animalImage.src = animal.image
+        animalDetails.appendChild(animalImage)
+
+        animalVotes.innerText = `TOTAL VOTES = ${voteTotal}`
+        animalDetails.appendChild(animalVotes)
+
+        //Form to submit new votes for adding
+        const form = document.createElement('form')
+        const inputVotes = document.createElement('input')
+        const submitVotes = document.createElement('input')
+        inputVotes.type = "number"
+        inputVotes.placeholder = 'Enter Votes'
+        submitVotes.type = "submit"
+        newVotesDiv.innerHTML = ''
+        form.style.margin = '10px'
+
+        form.appendChild(inputVotes)
+        form.appendChild(submitVotes)
+        newVotesDiv.appendChild(form)
+
+        //update votes on DOM without persistence 
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            if (inputVotes.value > 0) {
+                voteTotal = parseInt(voteTotal, 10) + parseInt(inputVotes.value)
+                animalVotes.innerText = `TOTAL VOTES = ${voteTotal}`
+            } else {
+
+            };
+            form.reset()
+        })
+
+    })
+
+}
+
+//Adds animal name to li content and appends to DOM
+function animalToMenu(toAdd, animal, AddedTo){
+    toAdd.innerText = animal.name
+    AddedTo.append(toAdd)
+}

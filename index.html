@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,38 +8,22 @@
     <link rel="stylesheet" href="./style.css">
     <title>Flataculties</title>
 </head>
+
 <body>
-    <!--Header for Flataculties miniweb app-->
-    <header>
-        <h1>Flataculties</h1><br>
-        <p>Flataculties is an app where you can vote for the cutest animal!</p>
-    </header>
-
-    <!--Container for all animals including their details-->
-<div id="cutiesContainer">
-
-    <!--User Input i.e adding votes-->
-    <div id="inputer">
-        <p id="voteInputText">
-            <b><label for="addedVotes">Please enter votes to be added:</label></b>
-            <input type="number" id="addedVotes" placeholder="Enter Votes Here">
-            <input type="submit" id="submitVotes"></p><br>
-        
-        <!--Display container for animal details-->
-        <div id="displayed"> 
-        <img id="animalImage">
-        <p id="animalVotes"></p>
-    
-        </div>
+    <header>Flataculties: Click Animal Name To See Details</header>
+    <div id="menu">
+        <ul id="animalNamesMenu"></ul>
     </div>
+    <div id="animalDetails">
+        <img id="animalImg">
+        <p id="animalVotes"></p>
+        <div id="newVotesDiv">
 
-    <h2>Meet our cute Animals, click names for details and vote:</h2>
-    <!--Stores the list of animal names-->
-    <ul id="cuties">
-    
-    </ul>
-</div>
+        </div>
+
+    </div>
 
     <script src="./src/index.js"></script>
 </body>
+
 </html>
